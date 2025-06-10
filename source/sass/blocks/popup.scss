@@ -1,0 +1,226 @@
+.popup {
+  // display: flex;
+  flex-direction: column;
+  width: 290px;
+  padding: 40px 15px;
+  background-color: $additional-color;
+  border-radius: 16px;
+  display: none;
+}
+
+.popup__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+}
+
+.popup__title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 400;
+  text-align: center;
+  color: $accent-color;
+}
+
+.popup__description {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 300;
+}
+
+.popup__form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.popup__input-title {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  color: rgba($main-dark-color, 0.8);
+  gap: 8px;
+}
+
+.popup__select {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.popup__input {
+  width: 260px;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  min-height: 44px;
+  padding: 10px 20px;
+  border: 1px solid rgba($main-dark-color, 0.3);
+  border-radius: 8px;
+  background-color: $additional-color;
+}
+
+.popup__input--select {
+  position: relative;
+}
+
+.popup__input--select::after {
+  content: "";
+  display: flex;
+
+  @include icon-mask-style(url("/__spritemap#sprite-arrow-view"), $main-dark-color);
+
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  right: 12px;
+  bottom: 17px;
+}
+
+.popup__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 260px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: 1px solid $main-dark-color;
+  border-radius: 8px;
+}
+
+.popup__item {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  min-height: 44px;
+  color: $main-dark-color;
+  padding: 10px 20px;
+  margin: 0;
+
+  &:hover {
+    background-color: $accent-color;
+    color: $additional-color;
+    cursor: pointer;
+  }
+}
+
+.popup__subscription {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.popup__checkbox-description {
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
+  color: rgba($main-dark-color, 0.9);
+  width: 200px;
+}
+
+.popup__decoration-mark {
+  width: 20px;
+  height: 20px;
+  background-color: $accent-color;
+  border-radius: 2px;
+  position: relative;
+}
+
+.popup__checkbox:not(:disabled):hover + .popup__decoration-mark,
+.popup__checkbox:not(:disabled):focus + .popup__decoration-mark,
+.popup__checkbox:not(:disabled):focus-within + .popup__decoration-mark {
+  background-color: $additional-color;
+  border: 1px solid $accent-color;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.popup__checkbox:checked + .popup__decoration-mark,
+.popup__checkbox:checked:hover + .popup__decoration-mark,
+.popup__checkbox:checked:focus + .popup__decoration-mark, {
+  background-color: $accent-color;
+  cursor: pointer;
+}
+
+.popup__checkbox:checked + .popup__decoration-mark::before {
+  content: "";
+  display: flex;
+  position: absolute;
+
+  @include icon-mask-style(url("/__spritemap#sprite-checked-view"), $additional-color);
+
+  border-radius: 2px;
+  width: 10px;
+  height: 10px;
+  left: 4px;
+  top: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.popup__checkbox:disabled:not(:checked) + .popup__decoration-mark {
+  background-color: rgba($disabled-color, 0.2);
+  border: 1px solid rgba($disabled-color, 0.5);
+  pointer-events: none;
+  touch-action: none;
+  cursor: not-allowed;
+}
+
+.popup__checkbox:disabled:checked + .popup__decoration-mark {
+  background-color: $disabled-color;
+  border: none;
+  pointer-events: none;
+  touch-action: none;
+}
+
+.popup__subscription:has(.popup__checkbox:disabled) {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.popup__button {
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  gap: 55px;
+  position: relative;
+
+  @include link-button;
+
+  width: 260px;
+  min-height: 42px;
+  padding: 4px 4px 4px 30px;
+}
+
+.popup__button::after {
+  content: "";
+
+  @include around-button;
+}
+
+.popup__button::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+
+  @include icon-mask-style(url("/__spritemap#sprite-string-view"), $additional-color);
+
+  position: absolute;
+  right: 16px;
+
+  @media (min-width: $tablet-width) {
+    right: 22px;
+  }
+}
+
+.popup__option--hidden {
+  visibility: hidden; // Скрываем текст
+}
+

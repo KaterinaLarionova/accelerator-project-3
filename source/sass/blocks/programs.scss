@@ -1,0 +1,362 @@
+.programs {
+  padding: 50px 15px;
+
+  @media (min-width: $tablet-width) {
+    padding: 50px 0 50px 45px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 60px 100px;
+    width: 1440px;
+    margin: 0 auto;
+  }
+}
+
+.programs__swiper {
+  // display: flex;
+  // flex-direction: column;
+  // position: relative;
+}
+
+.programs__inner {
+  width: 290px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 15px;
+  position: relative;
+
+  @media (min-width: $tablet-width) {
+    width: 678px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1240px;
+  }
+}
+
+.programs__title {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 400;
+  color: $accent-color;
+  margin: 6px 0 19px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 34px;
+    line-height: 50px;
+    margin: 3px 0 28px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 50px;
+    line-height: 50px;
+    margin: 5px 0 30px;
+  }
+}
+
+.programs__controls {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 6px;
+  width: 51px;
+  position: absolute;
+  top: 4px;
+  right: 0;
+
+  @media (min-width: $tablet-width) {
+    top: unset;
+    width: 54px;
+    gap: 10px;
+    bottom: calc(50% - 537px);
+    z-index: 3;
+  }
+}
+
+.programs__button {
+  @include slider-button;
+}
+
+.programs__button--next::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+
+  @include icon-mask-style(url("/__spritemap#sprite-string-view"), $accent-color);
+
+  rotate: 45deg;
+}
+
+.programs__button--prev::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+
+  @include icon-mask-style(url("/__spritemap#sprite-string-view"), $accent-color);
+
+  transform: rotate(-133deg);
+}
+
+.programs__list.swiper-wrapper {
+  padding: 0;
+  margin: 0 0 30px;
+  list-style: none;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+    //max-width: 1240px;
+    margin: 0 0 40px;
+  }
+}
+
+.programs__item.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  min-height: 400px;
+  padding: 18px 10px;
+
+  @media (min-width: $tablet-width) {
+    width: 324px;
+    min-height: 420px;
+    padding: 10px 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 392px;
+    padding: 20px 50px 17px 18px;
+  }
+}
+
+.programs__image {
+  display: block;
+  position: absolute;
+  border-radius: 12px;
+  left: 0;
+  top: 0;
+  min-height: 400px;
+  height: 100%;
+
+  @media (min-width: $tablet-width) {
+    object-fit: cover;
+    height: 420px;
+  }
+}
+
+.programs__info {
+  padding: 18px 18px 5px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  background-color: $additional-color;
+  border-radius: 12px;
+
+  --nb-r: 13px;
+  --nb-w: 98px;
+  --nb-h: 16px;
+
+  @media (min-width: $tablet-width) {
+    padding: 19px 18px 5px;
+
+    --nb-r: 14px;
+    --nb-w: 83px;
+    --nb-h: 10px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 321px;
+    padding: 18px 18px 5px;
+
+    --nb-w: 99px;
+    --nb-h: 13px;
+  }
+}
+
+.programs__subtitle {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+  color: $accent-color;
+  margin: 0 0 19px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 14px;
+    margin: 0 0 17px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 24px;
+    line-height: 17px;
+    margin: 0 0 19px;
+  }
+}
+
+.programs__container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 29px;
+
+  @media (min-width: $tablet-width) {
+    gap: 16px;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-height: 64px;
+  }
+}
+
+.programs__container p {
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
+  width: 175px;
+  margin: 0 0 9px;
+
+  @media (min-width: $tablet-width) {
+    width: 202px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 0 10px;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 239px;
+    line-height: 18px;
+    margin: 0 0 10px;
+  }
+}
+
+.programs__link {
+  @include around-button(30px, 30px);
+
+  position: relative;
+  top: 5px;
+
+  @media (min-width: $tablet-width) {
+    width: 30px;
+    height: 30px;
+    top: 15px;
+  }
+
+  @media (min-width: $desktop-width) {
+    top: 12px;
+  }
+}
+
+.programs__link::after {
+  content: "";
+  display: flex;
+  width: 8px;
+  height: 8px;
+
+  @include icon-mask-style(url("/__spritemap#sprite-string-view"), $additional-color);
+}
+
+.programs__button-all {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 205px;
+  min-height: 44px;
+  padding: 1px 4px 0 30px;
+  position: relative;
+
+  @include link-button;
+
+  @media (min-width: $tablet-width) {
+    top: 2px;
+    left: 50%;
+    transform: translateX(165%);
+    position: absolute;
+    width: 234px;
+    min-height: 56px;
+    padding: 1px 4px 1px 30px;
+  }
+}
+
+.programs__button-all::after {
+  content: "";
+  top: -1px;
+  position: relative;
+
+  @include around-button;
+
+  @media (min-width: $tablet-width) {
+    top: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    top: 0;
+  }
+}
+
+.programs__button-all::before {
+  content: "";
+  display: flex;
+  width: 10px;
+  height: 10px;
+  z-index: 1;
+
+  @include icon-mask-style(url("/__spritemap#sprite-string-view"), $additional-color);
+
+  position: absolute;
+  right: 16px;
+
+  @media (min-width: $tablet-width) {
+    right: 22px;
+  }
+}
+
+.programs__scrollbar-wrapper {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.programs__scrollbar {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+    width: 562px;
+    height: 2px;
+    background-color: $disabled-color;
+    margin: 0;
+    cursor: grab;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1136px;
+  }
+}
+
+.programs__scrollbar .swiper-scrollbar-drag {
+  background-color: $accent-color;
+  display: block;
+  height: 100%;
+  width: 394px;
+
+  @media (min-width: $desktop-width) {
+    width: 394px;
+  }
+}
+
+.programs__button-all--disabled {
+  @include disabled-button;
+}

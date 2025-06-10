@@ -1,0 +1,95 @@
+.site-list {
+  width: 290px;
+  padding: 35px 25px;
+  margin: 0;
+  border-radius: 16px;
+  background-color: $accent-color;
+
+  @include ul-flex-reset;
+
+  gap: 28px;
+
+  @media (min-width: $tablet-width) {
+    width: 286px;
+  }
+}
+
+.site-list__open {
+  display: flex;
+  transition: all 0.3s ease-in-out;
+}
+
+.site-list--closed {
+  display: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.site-list__link {
+  @include nav-link;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $additional-color;
+    outline: none;
+  }
+}
+
+.site-list__button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @include nav-link;
+
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $additional-color;
+    outline: none;
+  }
+}
+
+.site-list__button--closed {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 11px;
+    height: 5px;
+
+    @include icon-mask-style(url("/__spritemap#sprite-arrow-view"), $additional-color);
+  }
+
+  &:hover::after,
+  &:focus::after {
+    background-color: $additional-color;
+  }
+}
+
+.site-list__button--open {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 11px;
+    height: 5px;
+
+    @include icon-mask-style(url("/__spritemap#sprite-arrow-view"), $additional-color);
+
+    rotate: 180deg;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    background-color: $additional-color;
+  }
+}

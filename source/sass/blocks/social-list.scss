@@ -1,0 +1,84 @@
+.social-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  @media (min-width: $tablet-width) {
+    width: 220px;
+    justify-content: flex-end;
+    padding: 0 0 5px;
+  }
+
+  @media (min-width: $desktop-width) {
+    top: 9px;
+    left: 50%;
+    transform: translateX(182%);
+    gap: 20px;
+    position: absolute;
+  }
+}
+
+.social-list__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include link-button($accent-color, $additional-color);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+
+  @media (min-width: $tablet-width) {
+    width: 36px;
+    height: 35.7px;
+  }
+}
+
+.social-list__link--vk::before {
+  content: "";
+  width: 12px;
+  height: 6px;
+  display: flex;
+  justify-content: center;
+  @include icon-mask-style(url("/__spritemap#sprite-vk-view"), $additional-color);
+
+  @media (min-width: $tablet-width) {
+    width: 16px;
+    height: 9px;
+  }
+
+  @media (min-width: $desktop-width) {
+    height: 8px;
+  }
+}
+
+.social-list__link--ok::before {
+  content: "";
+  width: 6px;
+  height: 12px;
+  display: flex;
+  @include icon-mask-style(url("/__spritemap#sprite-ok-view"), $additional-color);
+
+  @media (min-width: $tablet-width) {
+    width: 10px;
+    height: 16px;
+  }
+}
+
+.social-list__link--reddit::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  @include icon-mask-style(url("/__spritemap#sprite-reddit-view"), $additional-color);
+
+  @media (min-width: $tablet-width) {
+    width: 15px;
+    height: 16px;
+  }
+  @media (min-width: $desktop-width) {
+    width: 16px;
+  }
+}

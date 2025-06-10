@@ -1,0 +1,14 @@
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 53px;
+  background-color: $additional-color;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.logo__image {
+  display: block;
+}

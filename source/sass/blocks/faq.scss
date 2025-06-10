@@ -1,0 +1,262 @@
+.faq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 51px;
+  padding-bottom: 50px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 71px;
+    padding-bottom: 60px;
+  }
+}
+
+.faq__title {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 400;
+  color: $accent-color;
+  margin: 0 0 29px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 34px;
+    line-height: 50px;
+    margin: 0 0 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 50px;
+    line-height: 50px;
+    margin: 0 0 71px;
+  }
+}
+
+.faq__list {
+  @include ul-flex-reset;
+
+  width: 290px;
+  margin: 0 auto;
+  padding: 0;
+  gap: 10px;
+
+  @media (min-width: $tablet-width) {
+    width: 678px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1028px;
+  }
+}
+
+.faq__item {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid $accent-color;
+  border-radius: 14px;
+  padding: 20px 15px;
+  cursor: pointer;
+
+  @media (min-width: $tablet-width) {
+    padding: 30px;
+    border-radius: 16px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 40px;
+  }
+}
+
+.faq__item--opened {
+  background-color: $accent-color;
+
+  .faq__subtitle {
+    color: $additional-color;
+  }
+}
+
+.faq__wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faq__subtitle {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+  color: $accent-color;
+  margin: 0;
+  width: 187px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 22px;
+    line-height: 26px;
+    width: 485px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 28px;
+    line-height: 34px;
+    width: 780px;
+  }
+}
+
+.faq__subtitle br {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: none;
+  }
+}
+
+.faq__button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  position: relative;
+  display: flex;
+  align-self: flex-start;
+
+
+  @media (min-width: $tablet-width) {
+    width: 40px;
+    height: 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+
+  }
+}
+
+.faq__button--closed {
+  background-color: $accent-color;
+  position: relative;
+
+  &:hover,
+  &:focus {
+    background-color: $transparent;
+    border: 1px solid $accent-color;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+
+    &::after {
+      background-color: $accent-color;
+      transition: background-color 0.3s ease-in-out;
+    }
+  }
+
+  &:active {
+    background-color: $pressed-color;
+    transition: all 0.2s ease-in-out;
+
+    &::after {
+      background-color: $additional-color;
+      transition: background-color 0.3s ease-in-out;
+    }
+  }
+
+  &:disabled {
+    background-color: $disabled-color;
+    cursor: default;
+    touch-action: none;
+    outline: none;
+    border: none;
+
+    &::after {
+      background-color: $additional-color;
+    }
+  }
+}
+
+.faq__button--closed::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: block;
+
+  @include icon-mask-style(url("/__spritemap#sprite-plus-view"), $additional-color);
+}
+
+.faq__button--opened {
+  background-color: $additional-color;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 18px;
+    height: 2px;
+    display: block;
+    background-color: $accent-color;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $transparent;
+    border: 1px solid $additional-color;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out;
+    outline: none;
+
+    &::after {
+      background-color: $additional-color;
+      transition: background-color 0.3s ease-in-out;
+    }
+  }
+
+  &:active {
+    background-color: $additional-color;
+    transition: all 0.2s ease-in-out;
+
+    &::after {
+      background-color: $pressed-color;
+    }
+  }
+}
+
+.faq__info {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  margin: 20px 0 0;
+  color: $additional-color;
+  background-color: $accent-color;
+  transition: opacity 0.3s ease-out;
+}
+
+.faq__info--closed {
+  display: none;
+}
+
+.faq__info--opened {
+  display: flex;
+}
+
+.faq__info p {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}

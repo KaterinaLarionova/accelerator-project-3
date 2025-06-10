@@ -1,0 +1,13 @@
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba($dark-grey, 0.4);
+  z-index: 20;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+}

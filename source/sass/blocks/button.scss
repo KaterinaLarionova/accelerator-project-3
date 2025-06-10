@@ -1,0 +1,27 @@
+.button {
+  display: flex;
+
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  word-break: break-all;
+  font-family: $main-font;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 500;
+  letter-spacing: 0.24px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 30px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  color: $accent-color;
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.28px;
+  }
+}
