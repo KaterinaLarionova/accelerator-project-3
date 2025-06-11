@@ -1,5 +1,5 @@
 .footer {
-  padding: 40px 0 40px;
+  padding: 40px 0;
 
   @media (min-width: $tablet-width) {
     padding: 39px 0 35px;
@@ -63,11 +63,11 @@
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
-  color: $main-dark-color;
   margin: 0;
   padding: 5px 0;
   text-decoration: none;
   cursor: pointer;
+  @include link-style;
 
   @media (min-width: $tablet-width) {
     font-size: 16px;
@@ -116,7 +116,7 @@
 .footer__confidentiality {
   text-underline-offset: 4px;
   text-decoration-thickness: 1px;
-  color: $main-dark-color;
+  @include link-style;
 
   @media (min-width: $tablet-width) {
     text-underline-offset: 2px;
@@ -134,7 +134,7 @@
   line-height: 14px;
   font-weight: 400;
   color: rgba($main-dark-color, 0.6);
-  margin: 12px 0 12px;
+  margin: 12px 0;
 
   @media (min-width: $tablet-width) {
     margin: 9px 0 -1px;

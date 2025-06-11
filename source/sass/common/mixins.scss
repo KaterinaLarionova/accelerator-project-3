@@ -14,6 +14,22 @@
   text-transform: $text-transform;
 }
 
+@mixin link-style {
+  color: $main-dark-color;
+
+  &:hover {
+    color: rgba($accent-color, 0.4);
+  }
+  &:focus {
+    color: $accent-color;
+    outline: none;
+  }
+
+  &:active {
+    color: $pressed-color;
+  }
+}
+
 @mixin menu-toggle {
   display: flex;
   justify-content: center;
@@ -147,7 +163,7 @@
   }
 }
 
-@mixin link-button ($background-color: transparent, $color: $accent-color) {
+@mixin link-button($background-color: transparent, $color: $accent-color) {
   background-color: $background-color;
   color: $color;
   border: 1px solid $accent-color;

@@ -26,10 +26,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  @include link-button($accent-color, $additional-color);
+  background-color: $accent-color;
   width: 26px;
   height: 26px;
   border-radius: 50%;
+
+  &:hover {
+    &::before {
+      background-color: rgba($additional-color, 0.7);
+    }
+  }
+
+  &:focus-within {
+    background-color: $additional-color;
+    outline: none;
+    border: none;
+
+    &::before {
+      background-color: $accent-color;
+    }
+  }
+
+  &:active {
+    background-color: $pressed-color;
+    border: none;
+    outline: none;
+
+    &::before {
+      background-color: $additional-color;
+    }
+  }
 
   @media (min-width: $tablet-width) {
     width: 36px;
@@ -43,6 +69,7 @@
   height: 6px;
   display: flex;
   justify-content: center;
+
   @include icon-mask-style(url("/__spritemap#sprite-vk-view"), $additional-color);
 
   @media (min-width: $tablet-width) {
@@ -60,6 +87,7 @@
   width: 6px;
   height: 12px;
   display: flex;
+
   @include icon-mask-style(url("/__spritemap#sprite-ok-view"), $additional-color);
 
   @media (min-width: $tablet-width) {
@@ -72,12 +100,14 @@
   content: "";
   width: 12px;
   height: 12px;
+
   @include icon-mask-style(url("/__spritemap#sprite-reddit-view"), $additional-color);
 
   @media (min-width: $tablet-width) {
     width: 15px;
     height: 16px;
   }
+
   @media (min-width: $desktop-width) {
     width: 16px;
   }

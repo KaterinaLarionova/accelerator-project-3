@@ -198,7 +198,7 @@
 </header>
 <div class="menu-overlay"></div>
 <main>
-  <!--<section class="about wrapper" data-test="about">
+  <section class="about wrapper" data-test="about">
     <div class="about__wrapper">
       <div class="about__description">
         <h2 class="about__title">О проекте «Стажировка»</h2>
@@ -1010,7 +1010,7 @@
         </div>
       </div>
     </div>
-  </section>-->
+  </section>
   <section class="contacts" data-test="contacts">
     <div class="contacts__inner   wrapper">
       <div class="contacts__wrapper">
@@ -1075,19 +1075,16 @@
           </div>
           <div class="subscription__inner">
             <label class="subscription__title" for="city">Выберите город</label>
-          <div class="subscription__select-icon">
               <select class="subscription__select" name="city" id="city" required>
-                <option value="" label=" "></option>
-
-                <option class="subscription__item" value="Moscow">Москва</option>
-                <option class="subscription__item" value="Saint-Petrsburg">Санкт-Петербург</option>
-                <option class="subscription__item" value="Kazan">Казань</option>
-                <option class="subscription__item" value="Omsk">Омск</option>
-                <option class="subscription__item" value="Ekaterinburg">Екатеринбург</option>
-                <option class="subscription__item" value="Samara">Самара</option>
+                <option class="subscription__select-item" value= "" label=" " data-placeholder="true"></option>
+                <option class="subscription__select-item" value="Moscow">Москва</option>
+                <option class="subscription__select-item" value="Saint-Petrsburg">Санкт-Петербург</option>
+                <option class="subscription__select-item" value="Kazan">Казань</option>
+                <option class="subscription__select-item" value="Omsk">Омск</option>
+                <option class="subscription__select-item" value="Ekaterinburg">Екатеринбург</option>
+                <option class="subscription__select-item" value="Samara">Самара</option>
               </select>
-              </div>
-            </div>
+          </div>
             <div class="subscription__inner-checkbox">
               <label class="subscription__agreement">
                 <input class="subscription__checkbox visually-hidden" type="checkbox" name="checkbox">
@@ -1160,30 +1157,32 @@
 </footer>
 
 
-<!--<div class="popup wrapper">
+<div class="popup wrapper">
   <button class="popup__close button" type="button"></button>
   <div class="popup__wrapper">
     <h2 class="popup__title">Напишите нам</h2>
     <p class="popup__description">Оставьте ваши контакты, если у вас остались вопросы – мы на них ответим!</p>
   </div>
-  <form class="popup__form" action="https://echo.htmlacademy.ru/courses" method="post" novalidate>
-    <label class="popup__input-title">Имя
-      <input class="popup__input" type="text" name="name" required>
-    </label>
-    <label class="popup__input-title">Телефон
-      <input class="popup__input" type="tel" name="phone" required>
-    </label>
-    <div class="popup__select">
-      <span class="popup__input-title">Выберите город</span>
-      <button class="popup__input popup__input--select" type="button"></button>
-      <ul class="popup__list">
-        <li class="popup__item">Москва</li>
-        <li class="popup__item">Санкт-Петербург</li>
-        <li class="popup__item">Казань</li>
-        <li class="popup__item">Омск</li>
-        <li class="popup__item">Екатеринбург</li>
-        <li class="popup__item">Самара</li>
-      </ul>
+  <form class="popup__form subscription" action="https://echo.htmlacademy.ru/courses" method="post" novalidate>
+    <div class="popup__inner subscription__inner">
+      <label class="popup__input-title subscription__title" for="popup-name">Имя</label>
+      <input class="popup__input subscription__input" type="text" name="name" id="popup-name" required>
+      </div>
+    <div class="popup__inner subscription__inner">
+    <label class="popup__input-title" for="popup-phone">Телефон</label>
+      <input class="popup__input subscription__input" type="tel" name="phone" id="popup-phone" required>
+    </div>
+    <div class="popup__select subscription__inner">
+      <label class="popup__input-title subscription__title" for="popup-city">Выберите город</label>
+      <select class="popup__list subscription__select" name="city" id="popup-city" required>
+        <option class="popup__item subscription__select-item" value= "" label=" " data-placeholder="true"></option>
+        <option class="popup__item subscription__select-item" value="Moscow">Москва</option>
+        <option class="popup__item subscription__select-item" value="Saint-Petrsburg">Санкт-Петербург</option>
+        <option class="popup__item subscription__select-item" value="Kazan">Казань</option>
+        <option class="popup__item subscription__select-item" value="Omsk">Омск</option>
+        <option class="popup__item subscription__select-item" value="Ekaterinburg">Екатеринбург</option>
+        <option class="popup__item subscription__select-item" value="Samara">Самара</option>
+      </select>
     </div>
     <label class="popup__subscription">
       <input class="popup__checkbox visually-hidden" type="checkbox">
@@ -1192,7 +1191,7 @@
     </label>
     <button class="button popup__button" type="submit" id="mySubmit">Отправить</button>
   </form>
-</div>-->
+</div>
 <script type="module" src="js/main.js"></script>
 </body>
 

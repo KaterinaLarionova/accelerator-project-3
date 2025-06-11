@@ -10,8 +10,7 @@ function groupNewsItems(groupSize) {
     return;
   }
 
-  wrapper.innerHTML = ''; // Очистить старое содержимое
-
+  wrapper.innerHTML = '';
   for (let i = 0; i < items.length; i += groupSize) {
     const slide = document.createElement('div');
     slide.classList.add('swiper-slide', 'news__union-slide');
@@ -81,15 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
     pagination: {
       el: '.news__pagination',
       dynamicBullets: true,
-      //dynamicMainBullets: 4,
-      //dynamicPrevNext: true,
       bulletClass: 'news__pagination--item',
       bulletActiveClass: 'news__pagination--item-active',
       type: 'custom',
       clickable: true,
-      /*renderBullet: function (index, className) {
-        return `<button class="${className}" tabindex="0" aria-label="Слайд ${index + 1}">${index + 1}</button>`;
-      },*/
       renderCustom: function (swiperPagination, current, total) {
         const countBullets = Math.min(total, 4);
         const startBullet = Math.min(Math.max(current - 2, 1), total - countBullets + 1);

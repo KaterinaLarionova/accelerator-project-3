@@ -1,11 +1,11 @@
 .popup {
-  // display: flex;
+  display: flex;
   flex-direction: column;
   width: 290px;
   padding: 40px 15px;
   background-color: $additional-color;
   border-radius: 16px;
-  display: none;
+  //display: none;
 }
 
 .popup__wrapper {

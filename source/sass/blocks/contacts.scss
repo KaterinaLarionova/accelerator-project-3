@@ -51,6 +51,7 @@
   margin: 0;
   gap: 21px;
   color: $additional-color;
+
   @include ul-flex-reset;
 
   @media (min-width: $tablet-width) {
@@ -111,8 +112,23 @@
   }
 }
 
+.contacts__info--phone {
+  &:hover {
+    color: rgba($additional-color, 0.7);
+  }
+  &:focus {
+    color: $main-dark-color;
+    outline: none;
+  }
+
+  &:active {
+    color: $additional-color;
+  }
+}
+
 .contacts__space {
   display: none;
+
   @media (min-width: $desktop-width) {
     display: block;
   }

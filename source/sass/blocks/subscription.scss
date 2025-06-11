@@ -29,12 +29,6 @@
   margin: 0;
   color: rgba($base-color, 0.8);
 
-  &:hover,
-  &:focus,
-  &:active {
-    color: $base-color;
-  }
-
   @media (min-width: $tablet-width) {
     font-size: 14px;
     line-height: 20px;
@@ -58,10 +52,17 @@
   margin: 0;
   resize: none;
   overflow: hidden;
+}
 
-  &:hover,
-  &:focus,
-  &:active {
+.subscription__inner:has(.subscription__title:hover),
+.subscription__inner:has(.subscription__input:hover),
+.subscription__inner:has(.subscription__input:focus),
+.subscription__inner:has(.subscription__input:active) {
+  .subscription__title {
+    color: $base-color;
+  }
+
+  .subscription__input {
     border-color: $additional-color;
     outline: none;
   }
@@ -85,12 +86,14 @@
   border-color: $error-color;
 }
 
-.subscription__select {
-  width: 260px;
+.ss-main .ss-arrow {
+  display: none;
+}
+
+.subscription__select.ss-main {
   position: relative;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  width: 260px;
+  min-height: 52px;
   background-color: transparent;
   color: $base-color;
   border: 1px solid rgba($additional-color, 0.3);
@@ -98,7 +101,33 @@
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
-  padding: 15px 24px 15px 20px;
+  padding: 15px 39px 15px 20px;
+  box-shadow: none;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 21px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    width: 14px;
+    height: 12px;
+    transition: transform 0.2s ease;
+
+    @include icon-mask-style(url("/__spritemap#sprite-arrow-view"), $additional-color);
+
+    @media (min-width: $tablet-width) {
+      right: 22px;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: $additional-color;
+    outline: none;
+  }
 
   @media (min-width: $tablet-width) {
     width: 362px;
@@ -107,27 +136,31 @@
 
   @media (min-width: $desktop-width) {
     width: 350px;
-    margin: -2px 0 -2px;
+    margin: -2px 0;
   }
 }
 
-.subscription__select-icon {
-  position: relative;
+.subscription__select.ss-main.ss-open-below::after {
+  transform: translateY(-50%) rotate(180deg);
 }
 
-.subscription__select-icon::before {
-  content: "";
-  display: block;
-  position: absolute;
-  right: 32px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 14px;
-  height: 12px;
-  @include icon-mask-style(url("/__spritemap#sprite-arrow-view"), $additional-color);
+.subscription__select.ss-open-below:not(.ss-main) {
+  border-radius: 8px;
+  transform: scaleY(1) translateY(4px);
+  transition: all 0.2s ease-in-out;
 
-  @media (min-width: $tablet-width) {
-    right: 22px;
+  .subscription__select-item {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 400;
+    padding: 17px 20px;
+
+    &:hover,
+    &:focus-within,
+    &:active {
+      background-color: $accent-color;
+      color: $additional-color;
+    }
   }
 }
 
@@ -209,6 +242,7 @@
   top: 5px;
   border-radius: 2px;
   transition: background-color 0.2s ease;
+
   @include icon-mask-style(url("/__spritemap#sprite-checked-view"), $accent-color);
 }
 
@@ -217,18 +251,6 @@
   background-color: $accent-color;
   border-color: $additional-color;
   cursor: pointer;
-  opacity: 1;
-}
-
-.subscription__checkbox:checked + .subscription__decoration-mark::before {
-  color: $additional-color;
-  border-color: $additional-color;
-}
-
-.subscription__checkbox:checked:hover + .subscription__decoration-mark,
-.subscription__checkbox:checked:focus:hover + .subscription__decoration-mark {
-  background-color: $accent-color;
-  cursor: pointer;
 }
 
 .subscription__checkbox:checked:hover + .subscription__decoration-mark::before,
@@ -236,34 +258,17 @@
   @include icon-mask-style(url("/__spritemap#sprite-checked-view"), $additional-color); // Белая галочка
 }
 
-.subscription__checkbox:disabled:not(:checked) + .subscription__decoration-mark {
-  background-color: rgba($disabled-color, 0.2);
-  border: 1px solid rgba($disabled-color, 0.5);
-  pointer-events: none;
-  cursor: not-allowed;
-}
-
-.subscription__checkbox:disabled:checked + .subscription__decoration-mark {
+/* .subscription__checkbox:disabled:checked + .subscription__decoration-mark {
   background-color: $disabled-color;
   border: none;
   pointer-events: none;
   cursor: not-allowed;
-}
+} */
 
 .subscription__checkbox:disabled:checked + .subscription__decoration-mark::before {
   @include icon-mask-style(url("/__spritemap#sprite-checked-view"), rgba($additional-color, 0.5)); // ослабленная галочка
 }
 
-/*.subscription__checkbox:not(:disabled):hover + .subscription__decoration-mark,
-.subscription__checkbox:not(:disabled):focus + .subscription__decoration-mark,
-.subscription__checkbox:not(:disabled):focus-within + .subscription__decoration-mark {
-  background-color: $accent-color;
-  border-color: $additional-color;
-  color: $additional-color;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-*/
 .subscription__checkbox:disabled:not(:checked) + .subscription__decoration-mark {
   background-color: rgba($disabled-color, 0.2);
   border: 1px solid rgba($disabled-color, 0.5);
@@ -293,6 +298,7 @@
   min-height: 44px;
   padding: 1px 4px 1px 21px;
   position: relative;
+
   @include link-button($transparent, $additional-color);
 
   border: 1px solid $additional-color;
@@ -300,9 +306,11 @@
   &:hover {
     background-color: $additional-color;
     color: $accent-color;
+
     &::after {
       background-color: $accent-color;
     }
+
     &::before {
       background-color: $additional-color;
       opacity: 0.7;
@@ -313,9 +321,11 @@
     outline: none;
     background-color: $accent-color;
     color: $additional-color;
+
     &::after {
       background-color: $additional-color;
     }
+
     &::before {
       background-color: $accent-color;
     }
@@ -324,9 +334,11 @@
   &:active {
     background-color: $additional-color;
     color: rgba($accent-color, 0.7);
+
     &::after {
       background-color: $accent-color;
     }
+
     &::before {
       background-color: rgba($additional-color, 0.7);
     }
@@ -349,7 +361,7 @@
 .subscription__button::after {
   content: "";
 
-  @include around-button (34px, 34px, $additional-color);
+  @include around-button(34px, 34px, $additional-color);
 }
 
 .subscription__button::before {
