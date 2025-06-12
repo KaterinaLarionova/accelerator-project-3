@@ -9,4 +9,5 @@ import './news-swiper.js';
 import './faq.js';
 import './reviews.js';
 import './select.js';
-
+import './modal.js';
+import './valid-form.js';

@@ -160,27 +160,29 @@
         --nb-w: 493px;
       }
 
+      .news__date {
+        width: 269px;
+      }
+
       .news__info {
         width: 440px;
 
-        --nb-r: 26px;
-        --nb-w: -38px;
-        --nb-h: 30px;
+        --nb-r: 15px;
+        --nb-w: -16px;
+        --nb-h: 46px;
       }
 
       .news__subtitle {
         width: 447px;
         min-height: 52px;
-        padding: 21px 18px 6px 0;
+        padding: 18px 18px 6px 0;
       }
 
       .news__description {
         width: 479px;
-
-        --nb-w: -22px;
-        --nb-h: 32px;
-        --nb-r: 16px;
-
+        --nb-w: -17px;
+        --nb-h: 35px;
+        --nb-r: 14px;
         gap: 12px;
       }
 
@@ -245,7 +247,7 @@
   --nb-r: 16px;
   --nb-w: 179px;
   --nb-h: -2px;
-  --nb-smooth-wrapper: 105%;
+  //--nb-smooth-wrapper: 105%;
 
   @media (min-width: $tablet-width) {
     --nb-w: 213px;
@@ -263,7 +265,7 @@
 
 .news__inner--travelling {
   @media (min-width: $tablet-width) {
-    --_nb-smooth: 107%;
+
   }
 
   @media (min-width: $desktop-width) {
@@ -284,24 +286,47 @@
   letter-spacing: 0.12px;
   font-weight: 400;
   color: $accent-color;
-  background-color: $additional-color;
-  padding: 13px 12px 2px 0;
+  background-color: $base-color;
+  padding: 13px 12px 5px 0;
+
+  --nb-r: 15px;
+  --nb-w: 164px;
+  --nb-h: 0px;
 
   @media (min-width: $tablet-width) {
-    padding: 13px 12px 2px 0;
+    --nb-r: 13px;
+    --nb-w: 204px;
+    --nb-h: 4px;
+    padding: 13px 12px 5px 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    --nb-w: 165px;
+    padding: 13px 12px 5px 0;
+  }
+}
+
+.news__date--volunteering {
+  @media (min-width: $tablet-width) {
+    --nb-r: 14px;
+    --nb-w: 204px;
+    --nb-h: 2px;
+  }
+
+  @media (min-width: $desktop-width) {
+    --nb-w: 166px;
   }
 }
 
 .news__info {
-  --nb-r: 17px;
-  --nb-w: 40px;
+  --nb-r: 15px;
+  --nb-w: 44px;
   --nb-h: 20px;
 
   @media (min-width: $tablet-width) {
-    --nb-r: 26px;
-    --nb-w: 49px;
-    --nb-h: 70px;
-    --_nb-smooth: 107%;
+    --nb-r: 12px;
+    --nb-w: 77px;
+    --nb-h: 86px;
   }
 
   @media (min-width: $desktop-width) {
@@ -313,19 +338,28 @@
 }
 
 .news__info--travelling {
-  --nb-h: 1px;
-  --_nb-smooth: 109%;
+  --nb-h: 4px;
+  --nb-r: 14px;
+  --nb-w: 45px;
 
   @media (min-width: $tablet-width) {
-    --nb-h: 16px;
-    --nb-r: 27px;
-    --nb-w: 47px;
+    --nb-h: 36px;
+    --nb-r: 14px;
+    --nb-w: 73px;
   }
 
   @media (min-width: $desktop-width) {
-    --nb-r: 25px;
-    --nb-w: 40px;
-    --nb-h: 21px;
+    --nb-r: 13px;
+    --nb-w: 64px;
+    --nb-h: 40px;
+  }
+}
+
+.news__info--interview {
+  @media (min-width: $desktop-width) {
+    --nb-r: 29px;
+    --nb-w: 32px;
+    --nb-h: 65px;
   }
 }
 
@@ -335,32 +369,34 @@
   --nb-r: 23px;
   --nb-w: -33px;
   --nb-h: 8px;
-  --_nb-smooth: 98%;
 
   @media (min-width: $tablet-width) and (max-width: $pre-desktop-width) {
     width: 215px;
-
-    --nb-r: 20px;
-    --nb-w: -32px;
-    --nb-h: 30px;
-    --_nb-smooth: 100%;
+    --nb-r: 16px;
+    --nb-w: -24px;
+    --nb-h: 32px;
   }
 
   @media (min-width: $desktop-width) {
     width: 280px;
-
-    --nb-w: 56px;
-    --nb-r: 17px;
-    --nb-h: 62px;
+    --nb-w: 62px;
+    --nb-r: 14px;
+    --nb-h: 63px;
   }
 }
 
 .news__info--career {
+  --nb-r: 15px;
+  --nb-w: 44px;
+  --nb-h: 2px;
+
   @media (min-width: $tablet-width) {
-    --nb-r: 26px;
-    --nb-w: 48px;
-    --nb-h: 15px;
-    --_nb-smooth: 110%;
+    --nb-r: 14px;
+    --nb-w: 73px;
+    --nb-h: 34px;
+  }
+  @media (min-width: $desktop-width) {
+    --nb-h: 38px;
   }
 }
 
@@ -368,10 +404,9 @@
   font-size: 16px;
   line-height: 18px;
   font-weight: 400;
-  min-height: 35px;
   color: $accent-color;
-  background-color: $additional-color;
-  padding: 13px 18px 2px 0;
+  background-color: $base-color;
+  padding: 10px 18px 4px 0;
   margin: 0;
   border-radius: 0 16px 0 0;
 
@@ -379,14 +414,20 @@
     font-size: 20px;
     line-height: 24px;
     width: 219px;
-    padding: 14px 18px 3px 0;
+    padding: 11px 18px 3px 0;
   }
 
   @media (min-width: $desktop-width) {
     font-size: 24px;
     line-height: 26px;
     width: 203px;
-    padding: 13px 18px 4px 0;
+    padding: 10px 18px 4px 0;
+  }
+}
+
+.news__subtitle--travelling {
+  @media (min-width: $tablet-width) {
+    min-height: 64px;
   }
 }
 
@@ -394,20 +435,19 @@
   display: flex;
   flex-flow: row wrap;
   gap: 10px;
-  padding: 14px 10px 5px 0;
-  background-color: $additional-color;
+  padding: 12px 11px 5px 0;
+  background-color: $base-color;
   border-radius: 0 16px 0 0;
 
-  --nb-r: 15px;
-  --nb-w: -19px;
+  --nb-r: 14px;
+  --nb-w: -17px;
   --nb-h: 36px;
-  --_nb-smooth: 95%;
 
   @media (min-width: $tablet-width) {
     padding: 14px 10px 10px 0;
 
-    --nb-w: 38px;
-    --nb-h: 79px;
+    --nb-w: 40px;
+    --nb-h: 81px;
 
     gap: 16px;
   }
@@ -421,26 +461,41 @@
   }
 }
 
+.news__description--interview {
+  @media (min-width: $desktop-width) {
+    --nb-h: 70px;
+  }
+}
+
 .news__description--travelling {
-  --nb-h: 23px;
+  --nb-h: 20px;
+  --nb-r: 16px;
+  --nb-w: -21px;
+
+  padding: 14px 11px 5px 0;
 
   @media (min-width: $tablet-width) {
-    --nb-h: 39px;
+    --nb-h: 45px;
+    --nb-r: 11px;
+    --nb-w: 46px;
+    padding: 12px 11px 10px 0;
   }
 
   @media (min-width: $desktop-width) {
-    --nb-h: 33px;
+    --nb-h: 35px;
+    --nb-r: 14px;
+    --nb-w: 2px;
   }
 }
 
 .news__description--volunteering {
-  --nb-h: 27px;
+  --nb-h: 29px;
 
   padding: 14px 10px 10px 0;
 
   @media (min-width: $tablet-width) {
-    --nb-h: 39px;
-    --nb-w: 38px;
+    --nb-h: 41px;
+    --nb-w: 40px;
   }
 
   @media (min-width: $desktop-width) {
@@ -456,7 +511,11 @@
   --nb-h: 36px;
 
   @media (min-width: $tablet-width) {
-    --nb-h: 59px;
+    --nb-h: 61px;
+  }
+
+  @media (min-width: $desktop-width) {
+    --nb-h: 51px;
   }
 }
 
@@ -523,17 +582,15 @@
 }
 
 .news__item--interview {
-  background-image:
-    image-set(
+  background-image: image-set(
       url("../../img/news/slide-1-mobile@1x.webp") 1x type("image/webp"),
       url("../../img/news/slide-1-mobile@2x.webp") 2x type("image/webp"),
       url("../../img/news/slide-1-mobile@1x.jpg") 1x type("image/jpg"),
       url("../../img/news/slide-1-mobile@2x.jpg") 2x type("image/jpg")
-    );
+  );
 
   @media (min-width: $tablet-width) {
-    background-image:
-      image-set(
+    background-image: image-set(
         url("../../img/news/slide-1-tablet@1x.webp") 1x type("image/webp"),
         url("../../img/news/slide-1-tablet@2x.webp") 2x type("image/webp"),
         url("../../img/news/slide-1-tablet@1x.jpg") 1x type("image/jpg"),
@@ -541,8 +598,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    background-image:
-      image-set(
+    background-image: image-set(
         url("../../img/news/slide-1-desktop@1x.webp") 1x type("image/webp"),
         url("../../img/news/slide-1-desktop@2x.webp") 2x type("image/webp"),
         url("../../img/news/slide-1-desktop@1x.jpg") 1x type("image/jpg"),
@@ -551,17 +607,15 @@
 }
 
 .news__item--travelling {
-  background-image:
-    image-set(
+  background-image: image-set(
       url("../../img/news/slide-2-mobile@1x.webp") 1x type("image/webp"),
       url("../../img/news/slide-2-mobile@2x.webp") 2x type("image/webp"),
       url("../../img/news/slide-2-mobile@1x.jpg") 1x type("image/jpg"),
       url("../../img/news/slide-2-mobile@2x.jpg") 2x type("image/jpg")
-    );
+  );
 
   @media (min-width: $tablet-width) {
-    background-image:
-      image-set(
+    background-image: image-set(
         url("../../img/news/slide-2-tablet@1x.webp") 1x type("image/webp"),
         url("../../img/news/slide-2-tablet@2x.webp") 2x type("image/webp"),
         url("../../img/news/slide-2-tablet@1x.jpg") 1x type("image/jpg"),
@@ -569,8 +623,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    background-image:
-      image-set(
+    background-image: image-set(
         url("../../img/news/slide-2-desktop@1x.webp") 1x type("image/webp"),
         url("../../img/news/slide-2-desktop@2x.webp") 2x type("image/webp"),
         url("../../img/news/slide-2-desktop@1x.jpg") 1x type("image/jpg"),
@@ -580,62 +633,56 @@
 
 
 .news__item--volunteering {
-  background-image:
-    image-set(
+  background-image: image-set(
       url("../../img/news/slide-3-mobile@1x.webp") 1x type("image/webp"),
       url("../../img/news/slide-3-mobile@2x.webp") 2x type("image/webp"),
       url("../../img/news/slide-3-mobile@1x.jpg") 1x type("image/jpg"),
       url("../../img/news/slide-3-mobile@2x.jpg") 2x type("image/jpg")
-    );
+  );
 
   @media (min-width: $tablet-width) {
-    background-image:
-      image-set(
+    background-image: image-set(
         url("../../img/news/slide-3-tablet@1x.webp") 1x type("image/webp"),
         url("../../img/news/slide-3-tablet@2x.webp") 2x type("image/webp"),
         url("../../img/news/slide-3-tablet@1x.jpg") 1x type("image/jpg"),
         url("../../img/news/slide-3-tablet@2x.jpg") 2x type("image/jpg")
-      );
+    );
   }
 
   @media (min-width: $desktop-width) {
-    background-image:
-      image-set(
+    background-image: image-set(
         url("../../img/news/slide-3-desktop@1x.webp") 1x type("image/webp"),
         url("../../img/news/slide-3-desktop@2x.webp") 2x type("image/webp"),
         url("../../img/news/slide-3-desktop@1x.jpg") 1x type("image/jpg"),
         url("../../img/news/slide-3-desktop@2x.jpg") 2x type("image/jpg")
-      );
+    );
   }
 }
 
 .news__item--career {
-  background-image:
-    image-set(
+  background-image: image-set(
       url("../../img/news/slide-4-mobile@1x.webp") 1x type("image/webp"),
       url("../../img/news/slide-4-mobile@2x.webp") 2x type("image/webp"),
       url("../../img/news/slide-4-mobile@1x.jpg") 1x type("image/jpg"),
       url("../../img/news/slide-4-mobile@2x.jpg") 2x type("image/jpg")
-    );
+  );
 
   @media (min-width: $tablet-width) {
-    background-image:
-      image-set(
+    background-image: image-set(
         url("../../img/news/slide-4-tablet@1x.webp") 1x type("image/webp"),
         url("../../img/news/slide-4-tablet@2x.webp") 2x type("image/webp"),
         url("../../img/news/slide-4-tablet@1x.jpg") 1x type("image/jpg"),
         url("../../img/news/slide-4-tablet@2x.jpg") 2x type("image/jpg")
-      );
+    );
   }
 
   @media (min-width: $desktop-width) {
-    background-image:
-      image-set(
+    background-image: image-set(
         url("../../img/news/slide-4-desktop@1x.webp") 1x type("image/webp"),
         url("../../img/news/slide-4-desktop@2x.webp") 2x type("image/webp"),
         url("../../img/news/slide-4-desktop@1x.jpg") 1x type("image/jpg"),
         url("../../img/news/slide-4-desktop@2x.jpg") 2x type("image/jpg")
-      );
+    );
   }
 }
 
@@ -744,4 +791,14 @@
     width: 32px;
     height: 32px;
   }
+}
+
+.news__news {
+  width: 24px;
+  height: 41px;
+  background-color: $base-color;
+
+  --nb-r: 22px;
+  --nb-w: -20px;
+  --nb-h: -1px;
 }

@@ -104,6 +104,13 @@
   padding: 15px 39px 15px 20px;
   box-shadow: none;
 
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: $additional-color;
+    outline: none;
+  }
+
   &::after {
     content: "";
     display: block;
@@ -120,13 +127,6 @@
     @media (min-width: $tablet-width) {
       right: 22px;
     }
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    border-color: $additional-color;
-    outline: none;
   }
 
   @media (min-width: $tablet-width) {
@@ -257,13 +257,6 @@
 .subscription__checkbox:checked:focus:hover + .subscription__decoration-mark::before {
   @include icon-mask-style(url("/__spritemap#sprite-checked-view"), $additional-color); // Белая галочка
 }
-
-/* .subscription__checkbox:disabled:checked + .subscription__decoration-mark {
-  background-color: $disabled-color;
-  border: none;
-  pointer-events: none;
-  cursor: not-allowed;
-} */
 
 .subscription__checkbox:disabled:checked + .subscription__decoration-mark::before {
   @include icon-mask-style(url("/__spritemap#sprite-checked-view"), rgba($additional-color, 0.5)); // ослабленная галочка

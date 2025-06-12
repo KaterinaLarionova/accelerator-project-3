@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import {Navigation, Mousewheel, Pagination, A11y, Grid} from 'swiper/modules';
+import {Navigation, Mousewheel, Pagination, A11y} from 'swiper/modules';
 import 'swiper/css';
 
 function groupNewsItems(groupSize) {
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   groupNewsItems(getGroupSize());
   const slidesCount = document.querySelectorAll('.news__swiper .swiper-slide').length;
   const swiper = new Swiper('.news__swiper', {
-    modules: [Navigation, Mousewheel, Pagination, A11y, Grid],
+    modules: [Navigation, Mousewheel, Pagination, A11y],
     direction: 'horizontal',
     loop: false,
     speed: 700,
