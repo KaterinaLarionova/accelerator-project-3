@@ -1,3 +1,5 @@
+import {isEscapeKey} from './util.js';
+
 const navMain = document.querySelector('.site-list');
 const navButton = document.querySelector('.main-header__button');
 const navToggle = document.querySelector('.main-header__toggle');
@@ -6,6 +8,12 @@ const menuOverlay = document.querySelector('.menu-overlay');
 const body = document.querySelector('.page__body');
 const listButtons = document.querySelectorAll('.site-list__button');
 
+const onModalEscKeydown = (evt) => {
+  if (isEscapeKey(evt)) {
+    evt.preventDefault();
+    closeMenu();
+  }
+};
 
 function closeMenu() {
   navMain.classList.add('site-list--closed');
@@ -15,6 +23,7 @@ function closeMenu() {
   navButton.classList.remove('main-header__button--open');
   navButton.classList.add('main-header__button--closed');
   menuOverlay.classList.remove('active');
+  document.removeEventListener('keydown', onModalEscKeydown);
   document.body.style.overflow = 'auto';
 }
 function burger(evt) {
@@ -29,6 +38,7 @@ function burger(evt) {
     navButton.classList.add('main-header__button--open');
     navButton.classList.remove('main-header__button--closed');
     menuOverlay.classList.add('active');
+    document.addEventListener('keydown', onModalEscKeydown);
     document.body.style.overflow = 'hidden';
   }
 }
