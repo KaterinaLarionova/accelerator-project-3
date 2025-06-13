@@ -9,8 +9,12 @@
   z-index: 101;
 }
 
-.popup__close {
+.popup__closed {
   display: none;
+}
+
+.popup__opened {
+  display: flex;
 }
 
 .popup__container {
@@ -31,7 +35,7 @@
   }
 }
 
-.popup__close-button {
+.popup__closed-button {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -58,7 +62,7 @@
   }
 }
 
-.popup__close-button::before {
+.popup__closed-button::before {
   content: "";
   display: block;
   width: 12px;

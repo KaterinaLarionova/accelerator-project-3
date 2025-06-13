@@ -61,6 +61,7 @@
   padding: 20px 15px;
   cursor: pointer;
 
+
   @media (min-width: $tablet-width) {
     padding: 30px;
     border-radius: 16px;
@@ -69,13 +70,103 @@
   @media (min-width: $desktop-width) {
     padding: 40px;
   }
+
+  &:hover,
+  &:focus-within {
+    background-color: $additional-color;
+    border: 2px solid $accent-color;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+  }
+
+  &:active {
+    color: $pressed-color;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover .faq__button--closed,
+  &:focus-within .faq__button--closed {
+    background-color: $additional-color;
+    border: 1px solid $accent-color;
+    outline: none;
+  }
+
+  &:active .faq__button--closed {
+    background-color: $pressed-color;
+  }
+
+  &:hover .faq__button--closed::after,
+  &:focus-within .faq__button--closed::after {
+    background-color: $accent-color;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  &:active .faq__button--closed::after {
+    background-color: $additional-color;
+    transition: background-color 0.3s ease-in-out;
+  }
 }
 
 .faq__item--opened {
   background-color: $accent-color;
+  color: $additional-color;
 
   .faq__subtitle {
     color: $additional-color;
+  }
+
+  &:hover,
+  &:focus-within {
+    background-color: $accent-color;
+  }
+
+  &:active {
+    background-color: $pressed-color;
+  }
+
+  &:hover .faq__button--opened,
+  &:focus-within .faq__button--opened {
+    background-color: $accent-color;
+    border: 1px solid $additional-color;
+    outline: none;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  &:active .faq__button--opened {
+    background-color: $additional-color;
+  }
+
+  &:hover .faq__button--opened::after,
+  &:focus-within .faq__button--opened::after {
+    background-color: $additional-color;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  &:active .faq__button--opened::after {
+    background-color: $pressed-color;
+    transition: background-color 0.3s ease-in-out;
+  }
+}
+
+.faq__item--disabled {
+  pointer-events: none;
+  cursor: none;
+  background-color: rgba($disabled-color, 0.5);
+  color: $additional-color;
+  border-color: $disabled-color;
+  opacity: 0.5;
+
+  .faq__button--closed:disabled {
+    background-color: $disabled-color;
+  }
+
+  .faq__button--closed::after {
+    background-color: $additional-color;
+  }
+
+  .faq__button--opened::after {
+    background-color: $additional-color;
   }
 }
 
@@ -127,7 +218,6 @@
   display: flex;
   align-self: flex-start;
 
-
   @media (min-width: $tablet-width) {
     width: 40px;
     height: 40px;
@@ -137,42 +227,6 @@
 .faq__button--closed {
   background-color: $accent-color;
   position: relative;
-
-  &:hover,
-  &:focus {
-    background-color: $transparent;
-    border: 1px solid $accent-color;
-    cursor: pointer;
-    outline: none;
-    transition: border-color 0.3s ease-in-out;
-
-    &::after {
-      background-color: $accent-color;
-      transition: background-color 0.3s ease-in-out;
-    }
-  }
-
-  &:active {
-    background-color: $pressed-color;
-    transition: all 0.2s ease-in-out;
-
-    &::after {
-      background-color: $additional-color;
-      transition: background-color 0.3s ease-in-out;
-    }
-  }
-
-  &:disabled {
-    background-color: $disabled-color;
-    cursor: default;
-    touch-action: none;
-    outline: none;
-    border: none;
-
-    &::after {
-      background-color: $additional-color;
-    }
-  }
 }
 
 .faq__button--closed::after {
@@ -195,29 +249,6 @@
     display: block;
     background-color: $accent-color;
   }
-
-  &:hover,
-  &:focus {
-    background-color: $transparent;
-    border: 1px solid $additional-color;
-    cursor: pointer;
-    transition: border-color 0.3s ease-in-out;
-    outline: none;
-
-    &::after {
-      background-color: $additional-color;
-      transition: background-color 0.3s ease-in-out;
-    }
-  }
-
-  &:active {
-    background-color: $additional-color;
-    transition: all 0.2s ease-in-out;
-
-    &::after {
-      background-color: $pressed-color;
-    }
-  }
 }
 
 .faq__info {
@@ -228,7 +259,8 @@
   font-weight: 400;
   margin: 20px 0 0;
   color: $additional-color;
-  background-color: $accent-color;
+
+  // background-color: $accent-color;
   transition: opacity 0.3s ease-out;
 }
 
