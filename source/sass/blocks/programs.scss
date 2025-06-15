@@ -276,13 +276,18 @@
   @include link-button;
 
   @media (min-width: $tablet-width) {
-    top: 2px;
+    top: 0;
     left: 50%;
-    transform: translateX(165%);
+    transform: translateX(35%);
     position: absolute;
     width: 234px;
     min-height: 56px;
     padding: 1px 4px 1px 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    transform: translateX(165%);
+    top: 2px;
   }
 }
 

@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Начни карьеру с нашей стажировки. Мы предлагаем практический опыт, наставничество и участие в реальных проектах.">
+  <meta name="description"
+        content="Начни карьеру с нашей стажировки. Мы предлагаем практический опыт, наставничество и участие в реальных проектах.">
   <title>Internship</title>
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="favicons/icon.svg" type="image/svg+xml">
@@ -53,21 +54,21 @@
           <button class="site-list__button site-list__button--closed" type="button">Программы</button>
           <ul class="site-list__sublist sublist sublist--closed">
             <li class="sublist__item">
-              <a class="sublist__link link-menu" href="#">Стажировки</a>
+              <a class="sublist__link link-menu" href="#programs">Стажировки</a>
             </li>
             <li class="sublist__item">
-              <a class="sublist__link link-menu" href="#">Волонтёрство</a>
+              <a class="sublist__link link-menu" href="#programs">Волонтёрство</a>
             </li>
             <li class="sublist__item">
-              <a class="sublist__link link-menu" href="#">Учёба</a>
+              <a class="sublist__link link-menu" href="#programs">Учёба</a>
             </li>
             <li class="sublist__item">
-              <a class="sublist__link link-menu" href="#">Религия</a>
+              <a class="sublist__link link-menu" href="#programs">Религия</a>
             </li>
           </ul>
         </li>
         <li class="site-list__item">
-          <a class="site-list__link link-menu" href="#travelling">Как поехать</a>
+          <a class="site-list__link link-menu" href="#grant">Как поехать</a>
         </li>
         <li class="site-list__item">
           <a class="site-list__link link-menu" href="#reviews">Отзывы</a>
@@ -76,19 +77,19 @@
           <button class="site-list__button site-list__button--closed" type="button">Новости</button>
           <ul class="site-list__sublist sublist sublist--closed">
             <li class="sublist__item">
-              <a class="sublist__link link-menu" href="#">Общее</a>
+              <a class="sublist__link link-menu" href="#news">Общее</a>
             </li>
             <li class="sublist__item">
-              <a class="sublist__link link-menu" href="#">Волонтерство</a>
+              <a class="sublist__link link-menu" href="#news">Волонтерство</a>
             </li>
             <li class="sublist__item">
-              <a class="sublist__link link-menu" href="#">Стажировки</a>
+              <a class="sublist__link link-menu" href="#news">Стажировки</a>
             </li>
             <li class="sublist__item">
-              <a class="sublist__link link-menu" href="#">Карьера</a>
+              <a class="sublist__link link-menu" href="#news">Карьера</a>
             </li>
             <li class="sublist__item">
-              <a class="sublist__link link-menu" href="#">Путешествия</a>
+              <a class="sublist__link link-menu" href="#news">Путешествия</a>
             </li>
           </ul>
         </li>
@@ -199,7 +200,7 @@
 </header>
 <div class="menu-overlay"></div>
 <main>
-  <section class="about wrapper" data-test="about">
+  <section class="about wrapper" id="about" data-test="about">
     <div class="about__wrapper">
       <div class="about__description">
         <h2 class="about__title">О проекте «Стажировка»</h2>
@@ -233,7 +234,7 @@
     </ul>
   </section>
 
-  <section class="programs" data-test="programs">
+  <section class="programs" id="programs" data-test="programs">
     <div class="swiper">
       <div class="programs__swiper">
         <div class="programs__inner">
@@ -406,7 +407,7 @@
       </div>
     </div>
   </section>
-  <section class="grant" data-test="grant">
+  <section class="grant" id="grant" data-test="grant">
     <div class=" grant__info wrapper">
       <div class="grant__wrapper">
         <h2 class="grant__title">Как поехать</h2>
@@ -447,7 +448,7 @@
       </div>
     </div>
   </section>
-  <section class="news" data-test="news">
+  <section class="news" id="news" data-test="news">
     <h2 class="news__title wrapper">Новости и материалы</h2>
     <div class="news__wrapper">
       <ul class="news__tubs-list">
@@ -809,21 +810,19 @@
           </div>
 
 
-
         </div>
       </div>
       <div class="news__controls-wrapper">
         <button class="button news__button news__button--prev swiper-button-prev" type="button"
                 aria-label="Посмотреть предыдущий слайд"></button>
         <div class="news__pagination swiper-pagination"></div>
-        <button class="button news__button news__button--next swiper-button-next" type="button">
-          <span class="visually-hidden">Открыть/Закрыть</span>
-        </button>
+        <button class="button news__button news__button--next swiper-button-next" type="button"
+                aria-label="Посмотреть следующий слайд"></button>
       </div>
     </div>
   </section>
 
-  <section class="faq wrapper" data-test="FAQ">
+  <section class="faq wrapper" id="faq" data-test="FAQ">
     <h2 class="faq__title">Вопросы и ответы</h2>
     <ul class="faq__list">
       <li class="faq__item">
@@ -896,7 +895,7 @@
       </li>
     </ul>
   </section>
-  <section class="reviews" data-test="reviews">
+  <section class="reviews" id="reviews" data-test="reviews">
     <div class="swiper">
       <div class="reviews__swiper">
         <div class="reviews__inner">
@@ -1063,7 +1062,7 @@
       </div>
     </div>
   </section>
-  <section class="contacts" data-test="contacts">
+  <section class="contacts" id="contacts" data-test="contacts">
     <div class="contacts__inner   wrapper">
       <div class="contacts__wrapper">
         <h2 class="contacts__title">Контакты</h2>
@@ -1105,7 +1104,7 @@
   </section>
 
 
-  <section class="form" data-test="form">
+  <section class="form" id="form" data-test="form">
     <div class="form__background">
       <div class="form__wrapper">
         <h2 class="form__title">Напишите нам</h2>
@@ -1123,28 +1122,29 @@
           </div>
           <div class="subscription__inner">
             <label class="subscription__title" for="massage">Ваше сообщение</label>
-            <textarea class="subscription__input subscription__input--textarea" name="massage" id="massage" required></textarea>
+            <textarea class="subscription__input subscription__input--textarea" name="massage" id="massage"
+                      required></textarea>
           </div>
           <div class="subscription__inner">
             <label class="subscription__title" for="city">Выберите город</label>
-              <select class="subscription__select" name="city" id="city" required>
-                <option class="subscription__select-item" label=" " data-placeholder="true"></option>
-                <option class="subscription__select-item" value="Moscow">Москва</option>
-                <option class="subscription__select-item" value="Saint-Petrsburg">Санкт-Петербург</option>
-                <option class="subscription__select-item" value="Kazan">Казань</option>
-                <option class="subscription__select-item" value="Omsk">Омск</option>
-                <option class="subscription__select-item" value="Ekaterinburg">Екатеринбург</option>
-                <option class="subscription__select-item" value="Samara">Самара</option>
-              </select>
+            <select class="subscription__select" name="city" id="city" required>
+              <option class="subscription__select-item" label=" " data-placeholder="true"></option>
+              <option class="subscription__select-item" value="Moscow">Москва</option>
+              <option class="subscription__select-item" value="Saint-Petrsburg">Санкт-Петербург</option>
+              <option class="subscription__select-item" value="Kazan">Казань</option>
+              <option class="subscription__select-item" value="Omsk">Омск</option>
+              <option class="subscription__select-item" value="Ekaterinburg">Екатеринбург</option>
+              <option class="subscription__select-item" value="Samara">Самара</option>
+            </select>
           </div>
-            <div class="subscription__inner-checkbox">
-              <label class="subscription__agreement">
-                <input class="subscription__checkbox visually-hidden" type="checkbox" name="checkbox">
-                <span class="subscription__decoration-mark"></span>
-                <span class="subscription__checkbox-description">Я согласен на обработку&nbsp;моих персональных<br> данных</span>
-              </label>
-            </div>
-            <button class="button subscription__button" type="submit">Отправить</button>
+          <div class="subscription__inner-checkbox">
+            <label class="subscription__agreement">
+              <input class="subscription__checkbox visually-hidden" type="checkbox" name="checkbox" id="checkbox" required>
+              <span class="subscription__decoration-mark"></span>
+              <span class="subscription__checkbox-description">Я согласен на обработку&nbsp;моих персональных<br> данных</span>
+            </label>
+          </div>
+          <button class="button subscription__button" type="submit">Отправить</button>
         </form>
       </div>
     </div>
@@ -1211,42 +1211,42 @@
 
 <div class="popup popup__closed">
   <div class="popup__container">
-  <button class="popup__closed-button button" type="button">
-    <span class="visually-hidden">Закрыть</span>
-  </button>
-  <div class="popup__wrapper">
-    <h2 class="popup__title">Напишите нам</h2>
-    <p class="popup__description">Оставьте ваши контакты, если у вас&nbsp;остались вопросы – мы на них ответим!</p>
-  </div>
-  <form class="popup__form" action="https://echo.htmlacademy.ru/courses" method="post" novalidate>
-    <div class="popup__inner">
-      <label class="popup__input-title" for="popup-name">Имя</label>
-      <input class="popup__input" type="text" name="popup-name" id="popup-name" required>
+    <button class="popup__closed-button button" type="button">
+      <span class="visually-hidden">Закрыть</span>
+    </button>
+    <div class="popup__wrapper">
+      <h2 class="popup__title">Напишите нам</h2>
+      <p class="popup__description">Оставьте ваши контакты, если у вас&nbsp;остались вопросы – мы на них ответим!</p>
+    </div>
+    <form class="popup__form" action="https://echo.htmlacademy.ru/courses" method="post" novalidate>
+      <div class="popup__inner">
+        <label class="popup__input-title" for="popup-name">Имя</label>
+        <input class="popup__input" type="text" name="popup-name" id="popup-name" required>
       </div>
-    <div class="popup__inner">
-    <label class="popup__input-title" for="popup-phone">Телефон</label>
-      <input class="popup__input" type="tel" name="popup-phone" id="popup-phone" required>
-    </div>
-    <div class="popup__inner">
-      <label class="popup__input-title" for="popup-city">Выберите город</label>
-      <select class="popup__select" name="popup-city" id="popup-city" required>
-        <option class="popup__item" label=" " data-placeholder="true"></option>
-        <option class="popup__item" value="Moscow">Москва</option>
-        <option class="popup__item" value="Saint-Petrsburg">Санкт-Петербург</option>
-        <option class="popup__item" value="Kazan">Казань</option>
-        <option class="popup__item" value="Omsk">Омск</option>
-        <option class="popup__item" value="Ekaterinburg">Екатеринбург</option>
-        <option class="popup__item" value="Samara">Самара</option>
-      </select>
-    </div>
-    <label class="popup__subscription">
-      <input class="popup__checkbox visually-hidden" type="checkbox" name="checkbox">
-      <span class="popup__decoration-mark"></span>
-      <span class="popup__checkbox-description">Я согласен на обработку моих&nbsp;персональных&nbsp;данных</span>
-    </label>
-    <button class="button popup__button" type="submit" id="button">Отправить</button>
-  </form>
-</div>
+      <div class="popup__inner">
+        <label class="popup__input-title" for="popup-phone">Телефон</label>
+        <input class="popup__input" type="tel" name="popup-phone" id="popup-phone" required>
+      </div>
+      <div class="popup__inner">
+        <label class="popup__input-title" for="popup-city">Выберите город</label>
+        <select class="popup__select" name="popup-city" id="popup-city" required>
+          <option class="popup__item" label=" " data-placeholder="true"></option>
+          <option class="popup__item" value="Moscow">Москва</option>
+          <option class="popup__item" value="Saint-Petrsburg">Санкт-Петербург</option>
+          <option class="popup__item" value="Kazan">Казань</option>
+          <option class="popup__item" value="Omsk">Омск</option>
+          <option class="popup__item" value="Ekaterinburg">Екатеринбург</option>
+          <option class="popup__item" value="Samara">Самара</option>
+        </select>
+      </div>
+      <label class="popup__subscription">
+        <input class="popup__checkbox visually-hidden" type="checkbox" name="checkbox">
+        <span class="popup__decoration-mark"></span>
+        <span class="popup__checkbox-description">Я согласен на обработку моих&nbsp;персональных&nbsp;данных</span>
+      </label>
+      <button class="button popup__button" type="submit" id="button">Отправить</button>
+    </form>
+  </div>
 </div>
 <script type="module" src="js/main.js"></script>
 </body>

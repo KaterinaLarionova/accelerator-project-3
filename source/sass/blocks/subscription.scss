@@ -81,11 +81,6 @@
   }
 }
 
-.subscription__input--error {
-  background-color: rgba($error-color, 0.2);
-  border-color: $error-color;
-}
-
 .ss-main .ss-arrow {
   display: none;
 }
@@ -210,7 +205,85 @@
   pointer-events: none;
 }
 
-.subscription__checkbox + .subscription__checkbox-description {
+.subscription__decoration-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: $additional-color;
+  border: 1px solid $transparent;
+  border-radius: 2px;
+  position: relative;
+
+  &:hover,
+  &:focus,
+  &:focus-visible,
+  &:focus-within,
+  &:active {
+    opacity: 1;
+    outline: none;
+    background-color: transparent;
+    border: solid 1px $base-color;
+    cursor: pointer;
+  }
+}
+
+.subscription__checkbox:checked + .subscription__decoration-mark::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  left: 4px;
+  top: 5px;
+  border-radius: 2px;
+  transition: background-color 0.2s ease;
+
+  @include icon-mask-style(url("/__spritemap#sprite-checked-view"), $accent-color);
+}
+
+.subscription__checkbox:hover + .subscription__decoration-mark,
+.subscription__checkbox:focus + .subscription__decoration-mark,
+.subscription__checkbox:focus-visible + .subscription__decoration-mark,
+.subscription__checkbox:focus-within + .subscription__decoration-mark,
+.subscription__checkbox:checked:hover + .subscription__decoration-mark,
+.subscription__checkbox:checked:focus + .subscription__decoration-mark,
+.subscription__checkbox:checked:focus-visible + .subscription__decoration-mark,
+.subscription__checkbox:checked:focus-within + .subscription__decoration-mark {
+  background-color: transparent;
+  border-color: $additional-color;
+  cursor: pointer;
+}
+
+.subscription__checkbox:checked:hover + .subscription__decoration-mark::before,
+.subscription__checkbox:checked:focus + .subscription__decoration-mark::before,
+.subscription__checkbox:checked:focus-visible + .subscription__decoration-mark::before,
+.subscription__checkbox:checked:focus-within + .subscription__decoration-mark::before {
+  background-color: $additional-color;
+}
+
+.subscription__checkbox:disabled + .subscription__decoration-mark {
+  background-color: rgba($additional-color, 0.6);
+  border-color: $additional-color;
+  pointer-events: none;
+  touch-action: none;
+  cursor: not-allowed;
+}
+
+.subscription__checkbox:disabled:checked + .subscription__decoration-mark {
+  background-color: $disabled-color;
+  border: none;
+  pointer-events: none;
+  touch-action: none;
+  cursor: default;
+}
+
+.subscription__checkbox:disabled:checked + .subscription__decoration-mark::before {
+  background-color: $additional-color;
+}
+
+/*.subscription__checkbox + .subscription__checkbox-description {
   content: "";
   width: 20px;
   height: 20px;
@@ -255,11 +328,11 @@
 
 .subscription__checkbox:checked:hover + .subscription__decoration-mark::before,
 .subscription__checkbox:checked:focus:hover + .subscription__decoration-mark::before {
-  @include icon-mask-style(url("/__spritemap#sprite-checked-view"), $additional-color); // Белая галочка
+  @include icon-mask-style(url("/__spritemap#sprite-checked-view"), $additional-color);
 }
 
 .subscription__checkbox:disabled:checked + .subscription__decoration-mark::before {
-  @include icon-mask-style(url("/__spritemap#sprite-checked-view"), rgba($additional-color, 0.5)); // ослабленная галочка
+  @include icon-mask-style(url("/__spritemap#sprite-checked-view"), rgba($additional-color, 0.5));
 }
 
 .subscription__checkbox:disabled:not(:checked) + .subscription__decoration-mark {
@@ -280,7 +353,7 @@
 .subscription__agreement:has(.subscription__checkbox:disabled) {
   pointer-events: none;
   cursor: not-allowed;
-}
+}*/
 
 .subscription__button {
   display: flex;
@@ -375,4 +448,10 @@
 
 .subscription__button--disabled {
   @include disabled-button;
+}
+
+.subscription__input--error:not(.ss-open-below) {
+  background-color: rgba($error-color, 0.2);
+  border-color: $error-color;
+  display: block;
 }

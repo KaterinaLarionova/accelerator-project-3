@@ -1,7 +1,8 @@
 import './vendor/slimselect.min.js';
 
+let formSelect = null;
 document.addEventListener('DOMContentLoaded', () => {
-  new window.SlimSelect({
+  formSelect = new window.SlimSelect({
     select: '#city',
     settings: {
       showSearch: false,
@@ -21,3 +22,5 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 });
+
+export {formSelect};
