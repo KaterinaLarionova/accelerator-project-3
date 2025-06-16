@@ -19,20 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
         slidesPerView: 1,
         initialSlide: 0,
         simulateTouch: true,
-        //width: 290,
         spaceBetween: 15,
       },
       768: {
         slidesPerView: 2,
         spaceBetween: 30,
         simulateTouch: true,
-        //width: 1150,
       },
       1440: {
         slidesPerView: 2,
         spaceBetween: 32,
         simulateTouch: false,
-        //width: 1240,
       }
     },
     navigation: {
@@ -66,4 +63,3 @@ document.addEventListener('DOMContentLoaded', () => {
   resizeScrollbar();
   window.addEventListener('resize', resizeScrollbar);
 });
-

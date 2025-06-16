@@ -27,8 +27,6 @@
   background-color: $additional-color;
   border-radius: 16px;
 
-  // display: none;
-
   @media (min-width: $tablet-width) {
     width: 510px;
     padding: 60px 80px;
@@ -48,6 +46,32 @@
   background-color: transparent;
   cursor: pointer;
   border: none;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: rgba($disabled-color, 0.2);
+    cursor: pointer;
+
+    &::before {
+      background-color: rgba($accent-color, 0.2);
+    }
+  }
+
+  &:focus {
+    outline: none;
+    background-color: rgba($disabled-color, 0.2);
+    &::before {
+      background-color: $accent-color;
+    }
+  }
+
+  &:active {
+    background-color: $disabled-color;
+
+    &::before {
+        background-color: rgba($accent-color, 0.7);
+      }
+  }
 
   @media (min-width: $tablet-width) {
     width: 22px;
@@ -190,11 +214,6 @@
   }
 }
 
-.popup__input--error {
-  background-color: rgba($error-color, 0.2);
-  border-color: $error-color;
-}
-
 .ss-main.ss-arrow {
   display: none;
 }
@@ -316,28 +335,32 @@
   }
 }
 
+.popup__checkbox {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
 .popup__decoration-mark {
   width: 20px;
   height: 20px;
   background-color: $accent-color;
   border-radius: 2px;
   position: relative;
-}
+  border: solid 1px $transparent;
 
-.popup__checkbox:not(:disabled):hover + .popup__decoration-mark,
-.popup__checkbox:not(:disabled):focus + .popup__decoration-mark,
-.popup__checkbox:not(:disabled):focus-within + .popup__decoration-mark {
-  background-color: $additional-color;
-  border: 1px solid $accent-color;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.popup__checkbox:checked + .popup__decoration-mark,
-.popup__checkbox:checked:hover + .popup__decoration-mark,
-.popup__checkbox:checked:focus + .popup__decoration-mark, {
-  background-color: $accent-color;
-  cursor: pointer;
+  &:hover,
+  &:focus,
+  &:focus-visible,
+  &:focus-within,
+  &:active {
+    opacity: 1;
+    outline: none;
+    background-color: transparent;
+    border-color: $accent-color;
+    cursor: pointer;
+  }
 }
 
 .popup__checkbox:checked + .popup__decoration-mark::before {
@@ -346,7 +369,6 @@
   position: absolute;
 
   @include icon-mask-style(url("/__spritemap#sprite-checked-view"), $additional-color);
-
   border-radius: 2px;
   width: 10px;
   height: 10px;
@@ -355,9 +377,29 @@
   transition: background-color 0.2s ease;
 }
 
-.popup__checkbox:disabled:not(:checked) + .popup__decoration-mark {
-  background-color: rgba($disabled-color, 0.2);
-  border: 1px solid rgba($disabled-color, 0.5);
+.popup__checkbox:hover + .popup__decoration-mark,
+.popup__checkbox:focus + .popup__decoration-mark,
+.popup__checkbox:focus-visible + .popup__decoration-mark,
+.popup__checkbox:focus-within + .popup__decoration-mark,
+.popup__checkbox:checked:hover + .popup__decoration-mark,
+.popup__checkbox:checked:focus + .popup__decoration-mark,
+.popup__checkbox:checked:focus-visible + .popup__decoration-mark,
+.popup__checkbox:checked:focus-within + .popup__decoration-mark {
+  background-color: transparent;
+  border-color: $accent-color;
+  cursor: pointer;
+}
+
+.popup__checkbox:checked:hover + .popup__decoration-mark::before,
+.popup__checkbox:checked:focus + .popup__decoration-mark::before,
+.popup__checkbox:checked:focus-visible + .popup__decoration-mark::before,
+.popup__checkbox:checked:focus-within + .popup__decoration-mark::before {
+  background-color: $accent-color;
+}
+
+.popup__checkbox:disabled + .popup__decoration-mark {
+  background-color: rgba($additional-color, 0.6);
+  border-color: $disabled-color;
   pointer-events: none;
   touch-action: none;
   cursor: not-allowed;
@@ -368,11 +410,11 @@
   border: none;
   pointer-events: none;
   touch-action: none;
+  cursor: default;
 }
 
-.popup__subscription:has(.popup__checkbox:disabled) {
-  pointer-events: none;
-  cursor: not-allowed;
+.popup__checkbox:disabled:checked + .popup__decoration-mark::before {
+  background-color: $additional-color;
 }
 
 .popup__button {
@@ -415,6 +457,11 @@
 }
 
 .popup__option--hidden {
-  visibility: hidden; // Скрываем текст
+  visibility: hidden;
 }
 
+.popup__input--error:not(.ss-open-below) {
+  background-color: rgba($error-color, 0.2);
+  border-color: $error-color;
+  display: block;
+}

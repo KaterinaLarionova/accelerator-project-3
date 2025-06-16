@@ -1,6 +1,8 @@
 import './vendor/slimselect.min.js';
 
 let formSelect = null;
+let popupSelect = null;
+
 document.addEventListener('DOMContentLoaded', () => {
   formSelect = new window.SlimSelect({
     select: '#city',
@@ -12,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
-  new window.SlimSelect({
+  popupSelect = new window.SlimSelect({
     select: '#popup-city',
     settings: {
       showSearch: false,
@@ -23,4 +25,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-export {formSelect};
+export {formSelect, popupSelect};

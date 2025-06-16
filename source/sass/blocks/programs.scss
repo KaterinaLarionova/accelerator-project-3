@@ -12,12 +12,6 @@
   }
 }
 
-.programs__swiper {
-  // display: flex;
-  // flex-direction: column;
-  // position: relative;
-}
-
 .programs__inner {
   width: 290px;
   display: flex;
@@ -108,7 +102,6 @@
   }
 
   @media (min-width: $desktop-width) {
-    // max-width: 1240px;
     margin: 0 0 40px;
   }
 }
