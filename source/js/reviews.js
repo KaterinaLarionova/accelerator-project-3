@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initialSlide: 0,
     watchOverflow: true,
     centeredSlides: false,
+    grabCursor: true,
     breakpoints: {
       320: {
         slidesPerView: 1,
@@ -29,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
       1440: {
         slidesPerView: 2,
         spaceBetween: 32,
-        simulateTouch: false,
+        simulateTouch: true,
       }
     },
     navigation: {

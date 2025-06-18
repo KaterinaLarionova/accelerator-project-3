@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 1,
     initialSlide: 0,
     watchOverflow: true,
+    grabCursor: true,
     a11y: {
       enabled: true,
       paginationBulletMessage: 'Перейти к слайду {{index}}',
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     breakpoints: {
       1440: {
-        allowTouchMove: false,
+        allowTouchMove: true,
       },
     },
     pagination: {

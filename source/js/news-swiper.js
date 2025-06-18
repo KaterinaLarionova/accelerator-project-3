@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerGroup: 1,
     spaceBetween: 15,
     simulateTouch: true,
+    grabCursor: true,
     a11y: {
       enabled: true,
       paginationBulletMessage: 'Перейти к слайду {{index}}',
@@ -64,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       1440: {
         slidesPerView: 1,
         spaceBetween: 30,
-        simulateTouch: false,
+        simulateTouch: true,
       }
     },
     navigation: {
